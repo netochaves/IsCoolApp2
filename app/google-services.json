@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "33441526183",
+    "firebase_url": "https://groupiscool.firebaseio.com",
+    "project_id": "groupiscool",
+    "storage_bucket": "groupiscool.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33441526183:android:07873852e6d86133",
+        "android_client_info": {
+          "package_name": "easii.com.app.iscoolapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "33441526183-fu537029v2k1dpg069fjvl36gsplrgis.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAK2wfAHXGgbjFKYGxSTBUBgvxv6CQVizU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33441526183:android:2305558b1b7ed8d7",
+        "android_client_info": {
+          "package_name": "easii.com.br.iscoolapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "33441526183-r1oefe7dtq3pdbn493g89ejf2brvegp2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "easii.com.br.iscoolapp",
+            "certificate_hash": "82a2a89a180f5fa96b35dc316e6bc6df0c6499d2"
+          }
+        },
+        {
+          "client_id": "33441526183-fu537029v2k1dpg069fjvl36gsplrgis.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAK2wfAHXGgbjFKYGxSTBUBgvxv6CQVizU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "33441526183-fu537029v2k1dpg069fjvl36gsplrgis.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
