@@ -93,6 +93,7 @@ public class TelaMensagens extends AppCompatActivity implements View.OnClickList
             @Override
             public void onClick(View v) {
                 enviarMsg();
+                etMessage.setText("");
             }
         });
         list = (ListView) findViewById(R.id.rv_list);
@@ -144,6 +145,9 @@ public class TelaMensagens extends AppCompatActivity implements View.OnClickList
                         Log.i("LOG", "Falha na escrita");
                     }
                 });
+    }
+    public void lerMsg(){
+
     }
 
     public void carregaMsg() {
