@@ -73,11 +73,11 @@ public class MsgAdapter extends BaseAdapter {
         singleMessageContainer = (LinearLayout) row.findViewById(R.id.singleMessageContainer);
 
 
-        TextView tvTitle = (TextView) convertView.findViewById(R.id.tvTitle);
-        TextView tvMsg = (TextView) convertView.findViewById(R.id.tvMsg);
+        TextView tvTitle = (TextView) convertView.findViewById(R.id.msgUser);
+        TextView tvMsg = (TextView) convertView.findViewById(R.id.msgText);
 
 
-        String id = pm.getIdDoUser();
+        String id = pm.getId();
         String idCell = acessaSharedPreferences();
 
         MaterialColorPalette myCustomPalette = new MaterialColorPalette(Color.YELLOW);
@@ -85,17 +85,17 @@ public class MsgAdapter extends BaseAdapter {
 
         if(id.equals(idCell)){
 
-            tvTitle.setText(pm.getNomeDoUser());
+            tvTitle.setText(pm.getUser());
           //  tvTitle.setPadding(64, 16, 32, 0);
-            tvMsg.setText(pm.getMensagem());
+            tvMsg.setText(pm.getMsg());
         //    tvMsg.setPadding(64, 16, 32, 16);
          //   convertView = inflater.inflate(R.layout.list_item_message_right, null);
 
         }else{
 
-            tvTitle.setText(pm.getNomeDoUser());
+            tvTitle.setText(pm.getUser());
        //     tvTitle.setPadding(32, 16, 64, 0);
-            tvMsg.setText(pm.getMensagem());
+            tvMsg.setText(pm.getMsg());
        //     tvMsg.setPadding(32, 16, 64, 16);
             tvMsg.setBackgroundColor(my200Color);
             //tvMsg.setBackgroundColor(context.getResources().getColor(R.color.colorAccent));

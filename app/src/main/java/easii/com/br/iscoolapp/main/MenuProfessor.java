@@ -53,6 +53,8 @@ public class MenuProfessor extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new OneFragment(), "Grupos");
+        adapter.addFragment(new TwoFragment(), "Turma");
         viewPager.setAdapter(adapter);
     }
 

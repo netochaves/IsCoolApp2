@@ -25,30 +25,23 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
+        android:fitsSystemWindows="true">
 
-        >
-
-        <ListView
-            android:id="@+id/rv_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/ll_container"
-            android:layout_alignParentTop="true"
-            android:background="@android:color/white"
-            android:scrollbars="vertical" />
-
-
+       <android.support.v7.widget.RecyclerView
+           android:layout_width="match_parent"
+           android:layout_height="465dp"
+           android:id="@+id/recycleView_messages"
+           android:divider="#00000000" />
         <LinearLayout
             android:id="@+id/ll_container"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:background="@color/colorDivider"
             android:orientation="horizontal"
-            android:padding="5dp">
+            >
 
             <EditText
                 android:id="@+id/et_message"
