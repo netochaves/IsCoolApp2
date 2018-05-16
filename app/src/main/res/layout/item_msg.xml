@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/singleMessageContainer"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
@@ -14,7 +14,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvTitle"
+        android:id="@+id/msgUser1"
         android:textSize="12sp"
         android:textStyle="bold"
         android:paddingTop="10dp"
@@ -23,11 +23,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvMsg"
+        android:id="@+id/msgText1"
         android:textSize="16sp"
         android:paddingBottom="10dp"
-        android:textColor="#000"
-        android:background="@color/colorPrimary2"  />
+        android:textColor="#000" />
 
     </LinearLayout>
 

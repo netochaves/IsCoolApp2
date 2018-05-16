@@ -34,7 +34,7 @@ import easii.com.br.iscoolapp.util.DividerItemDecoration;
 /**
  * Created by gustavo on 16/08/2016.
  */
-public class OneFragment extends android.app.Fragment implements RecyclerViewOnClickListener {
+public class OneFragment extends Fragment implements RecyclerViewOnClickListener {
 
     private List<Disciplina> list = new ArrayList<>();
     private RecyclerView recyclerView;

@@ -70,7 +70,7 @@ public class MessagesListAdapter extends BaseAdapter {
         // Identifying the message owner
 
 
-        String id = m.getIdDoUser();
+        String id = m.getId();
         String idCell = acessaSharedPreferences();
 
         if (id.equals(idCell)) {
@@ -86,8 +86,8 @@ public class MessagesListAdapter extends BaseAdapter {
         TextView lblFrom = (TextView) convertView.findViewById(R.id.lblMsgFrom);
         TextView txtMsg = (TextView) convertView.findViewById(R.id.txtMsg);
 
-        txtMsg.setText(m.getMensagem());
-        lblFrom.setText(m.getNomeDoUser());
+        txtMsg.setText(m.getMsg());
+        lblFrom.setText(m.getUser());
 
         return convertView;
     }

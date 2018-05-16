@@ -1,52 +1,57 @@
 package easii.com.br.iscoolapp.objetos;
 
+import java.util.Date;
+
 /**
  * Created by viniciusthiengo on 8/10/15.
  */
 public class Message {
-    private String idDoUser;
-    private String nomeDoUser;
-    private String mensagem;
+    private String id;
+    private String user;
+    private String msg;
     private String idDisciplina;
     private String hora;
+    private Date data;
 
-    public Message(String nomeDoUser, String message, String idDoUser) {
-        this.nomeDoUser = nomeDoUser;
-        this.mensagem = message;
-        this.idDoUser = idDoUser;
+    public Message(){}
+
+    public Message(String id, String msg, String user) {
+        this.user = user;
+        this.msg = msg;
+        this.id = id;
     }
 
 
     public Message(String idDoUser, String nomeDoUser, String idDisciplina, String mensagem, String hora) {
-        this.idDoUser = idDoUser;
-        this.nomeDoUser = nomeDoUser;
+        this.id = idDoUser;
+        this.user = nomeDoUser;
         this.idDisciplina = idDisciplina;
-        this.mensagem = mensagem;
+        this.msg = mensagem;
         this.hora = hora;
     }
 
-    public String getIdDoUser() {
-        return idDoUser;
+    public String getId() {
+        return id;
     }
 
     public void setIdDoUser(String idDoUser) {
-        this.idDoUser = idDoUser;
+        this.id = idDoUser;
     }
 
-    public String getNomeDoUser() {
-        return nomeDoUser;
+    public String getUser() {
+        return user;
     }
 
     public void setNomeDoUser(String nomeDoUser) {
-        this.nomeDoUser = nomeDoUser;
+        this.user = nomeDoUser;
     }
 
-    public String getMensagem() {
-        return mensagem;
+    public String getMsg() {
+        return msg;
     }
 
     public void setMensagem(String mensagem) {
-        this.mensagem = mensagem;
+        this.msg = mensagem;
     }
 
     public String getIdDisciplina() {
@@ -63,5 +68,13 @@ public class Message {
 
     public void setHora(String hora) {
         this.hora = hora;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public Date getData() {
+        return data;
     }
 }

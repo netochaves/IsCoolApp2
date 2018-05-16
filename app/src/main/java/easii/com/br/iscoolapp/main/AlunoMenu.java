@@ -39,6 +39,7 @@ public class AlunoMenu extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_news));
         navigationView.setNavigationItemSelectedListener(this);
     }
 
