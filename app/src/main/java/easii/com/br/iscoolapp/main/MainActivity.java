@@ -21,6 +21,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -28,6 +29,8 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.gson.Gson;
 
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -95,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL.URL_LOGAR,
                 new Response.Listener<String>() {
+
                     @Override
                     public void onResponse(String response) {
 
@@ -176,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 },
                 new Response.ErrorListener() {
+
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         //  Toast.makeText(MainActivity.this, "Verifique sua conexão! 2", Toast.LENGTH_LONG).show();

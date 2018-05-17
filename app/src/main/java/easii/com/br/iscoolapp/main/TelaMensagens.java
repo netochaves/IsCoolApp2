@@ -87,27 +87,27 @@ public class TelaMensagens extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_mensagens);
         FirebaseFirestore.setLoggingEnabled(true);
-
-        recyclerViewMsg = (RecyclerView) findViewById(R.id.recycleView_messages);
-
+        acessaSharedPreferences();
         helper = new DatabaseHelper(this);
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         idDisciplina = bundle.getLong("EXTRA_ID_DISCIPLINA");
         nomeDisciplina= bundle.getString("EXTRA_NOME_DISCIPLINA");
+
+        recyclerViewMsg = (RecyclerView) findViewById(R.id.recycleView_messages);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarMsg);
+        toolbar.setTitle(nomeDisciplina);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(nomeDisciplina);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL,false);
         linearLayoutManager.setStackFromEnd(true);
         recyclerViewMsg.setLayoutManager(linearLayoutManager);
 
-        acessaSharedPreferences();
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-       getSupportActionBar().setTitle(" "+nomeDisciplina);
-     //   getSupportActionBar().setTitle(" Matemática");
-        getSupportActionBar().setLogo(R.drawable.textmsg);
         db = FirebaseFirestore.getInstance();
         etMessage = (EditText) findViewById(R.id.et_message);
         btSendMessage = (ImageButton) findViewById(R.id.bt_send_message);
