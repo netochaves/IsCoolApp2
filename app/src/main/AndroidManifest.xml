@@ -21,14 +21,13 @@
             android:name=".main.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask"
-            android:noHistory="true">
-        </activity>
+            android:noHistory="true" />
         <activity
             android:name=".main.MenuProfessor"
             android:label="@string/title_activity_menu_professor" />
         <activity
             android:name=".main.AlunoMenu"
-            android:label="AlunoMenu"/>
+            android:label="AlunoMenu" />
         <activity
             android:name=".main.MenuAluno"
             android:label="@string/title_activity_menu_aluno" />
@@ -102,6 +101,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".main.ResponsavelMenu"
+            android:label="@string/title_activity_responsavel_menu"
+            android:theme="@style/MyMaterialTheme" />
+        <activity android:name=".main.PerfilAluno"></activity>
     </application>
 
 </manifest>

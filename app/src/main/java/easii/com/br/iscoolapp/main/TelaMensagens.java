@@ -146,7 +146,7 @@ public class TelaMensagens extends AppCompatActivity implements View.OnClickList
     }
     public void getMsg(){
 
-        Query query = db.collection(nomeDisciplina);
+        Query query = db.collection(nomeDisciplina).orderBy("data");
         final FirestoreRecyclerOptions<Message> response = new FirestoreRecyclerOptions.Builder<Message>()
                 .setQuery(query, Message.class)
                 .build();

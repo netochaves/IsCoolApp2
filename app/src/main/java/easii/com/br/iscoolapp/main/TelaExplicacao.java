@@ -65,7 +65,7 @@ public class TelaExplicacao extends AppCompatActivity {
         getSupportActionBar().setTitle(" Explicações");
         getSupportActionBar().setLogo(R.drawable.textmsg);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_Explicação);
         mAdapter = new ExplicacaoAdapter(listE);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(mLayoutManager);

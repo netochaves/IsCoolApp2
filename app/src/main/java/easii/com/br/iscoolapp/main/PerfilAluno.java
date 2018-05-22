@@ -1,8 +1,9 @@
 package easii.com.br.iscoolapp.main;
 
-
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,31 +27,25 @@ import java.util.Map;
 import de.hdodenhof.circleimageview.CircleImageView;
 import easii.com.br.iscoolapp.R;
 import easii.com.br.iscoolapp.constantes.URL;
+import easii.com.br.iscoolapp.objetos.Aluno2;
 import easii.com.br.iscoolapp.objetos.Insignia;
 
-public class PerfilVisualizado extends AppCompatActivity {
-
+public class PerfilAluno extends AppCompatActivity {
     private Toolbar toolbar;
     private long id;
     private String nome;
     public CircleImageView s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12;
     private String listaDeInsignias = null;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perfil_visualizado);
-
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        id = bundle.getLong("EXTRA_Id");
-        nome = bundle.getString("EXTRA_Nome");
+        setContentView(R.layout.activity_perfil_aluno);
 
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.drawable.perfil);
 
         s1 = (CircleImageView) findViewById(R.id.s1);
@@ -65,7 +60,7 @@ public class PerfilVisualizado extends AppCompatActivity {
         s10 = (CircleImageView) findViewById(R.id.s10);
         s11 = (CircleImageView) findViewById(R.id.s11);
         s12 = (CircleImageView) findViewById(R.id.s12);
-
+        setaInformacoes();
         procuraInsignea();
     }
 
@@ -76,7 +71,21 @@ public class PerfilVisualizado extends AppCompatActivity {
 
         return true;
     }
+    private void setaInformacoes() {
 
+        SharedPreferences sharedPref = this.getSharedPreferences("CONSTANTES", Context.MODE_PRIVATE);
+        String alunoJson = sharedPref.getString("ALUNO", "NULL");
+
+        Gson gson = new Gson();
+        Aluno2 aluno2 = gson.fromJson(alunoJson, Aluno2.class);
+
+        TextView perfil_name = (TextView) findViewById(R.id.Perfil_name);
+        TextView perfil_ira = (TextView) findViewById(R.id.perfil_ira);
+        TextView perfil_frequencia = (TextView) findViewById(R.id.perfil_frequencia);
+        perfil_frequencia.setText("0");
+        perfil_ira.setText("0");
+        perfil_name.setText(primeiroNomeDoAluno(aluno2.getNome()));
+    }
     private String primeiroNomeDoAluno(String nomeCompleto) {
 
 
@@ -102,7 +111,7 @@ public class PerfilVisualizado extends AppCompatActivity {
 
                         Gson gson = new Gson();
                         if (response.equals("0")) {
-                            Toast.makeText(PerfilVisualizado.this, nome +" ainda não possui Insignias!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(PerfilAluno.this, nome +" ainda não possui Insignias!", Toast.LENGTH_LONG).show();
 
                         } else {
                             Log.i("LOG", "entrou no else q nao deveria:" + listaDeInsignias);
@@ -123,7 +132,7 @@ public class PerfilVisualizado extends AppCompatActivity {
                                         @Override
                                         public void onClick(View v) {
 
-                                            new AlertDialog.Builder(PerfilVisualizado.this)
+                                            new AlertDialog.Builder(PerfilAluno.this)
                                                     .setTitle("Insignia Conquistada")
                                                     .setMessage(texto)
                                                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -150,7 +159,7 @@ public class PerfilVisualizado extends AppCompatActivity {
                                         @Override
                                         public void onClick(View v) {
 
-                                            new AlertDialog.Builder(PerfilVisualizado.this)
+                                            new AlertDialog.Builder(PerfilAluno.this)
                                                     .setTitle("Insignia Conquistada")
                                                     .setMessage(texto)
                                                     .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -177,7 +186,7 @@ public class PerfilVisualizado extends AppCompatActivity {
                                         @Override
                                         public void onClick(View v) {
 
-                                            new AlertDialog.Builder(PerfilVisualizado.this)
+                                            new AlertDialog.Builder(PerfilAluno.this)
                                                     .setTitle("Insignia Conquistada")
                                                     .setMessage(texto)
                                                     .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -204,7 +213,7 @@ public class PerfilVisualizado extends AppCompatActivity {
                                         @Override
                                         public void onClick(View v) {
 
-                                            new AlertDialog.Builder(PerfilVisualizado.this)
+                                            new AlertDialog.Builder(PerfilAluno.this)
                                                     .setTitle("Insignia Conquistada")
                                                     .setMessage(texto)
                                                     .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -231,7 +240,7 @@ public class PerfilVisualizado extends AppCompatActivity {
                                         @Override
                                         public void onClick(View v) {
 
-                                            new AlertDialog.Builder(PerfilVisualizado.this)
+                                            new AlertDialog.Builder(PerfilAluno.this)
                                                     .setTitle("Insignia Conquistada")
                                                     .setMessage(texto)
                                                     .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -258,7 +267,7 @@ public class PerfilVisualizado extends AppCompatActivity {
                                         @Override
                                         public void onClick(View v) {
 
-                                            new AlertDialog.Builder(PerfilVisualizado.this)
+                                            new AlertDialog.Builder(PerfilAluno.this)
                                                     .setTitle("Insignia Conquistada")
                                                     .setMessage(texto)
                                                     .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -285,7 +294,7 @@ public class PerfilVisualizado extends AppCompatActivity {
                                         @Override
                                         public void onClick(View v) {
 
-                                            new AlertDialog.Builder(PerfilVisualizado.this)
+                                            new AlertDialog.Builder(PerfilAluno.this)
                                                     .setTitle("Insignia Conquistada")
                                                     .setMessage(texto)
                                                     .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -312,7 +321,7 @@ public class PerfilVisualizado extends AppCompatActivity {
                                         @Override
                                         public void onClick(View v) {
 
-                                            new AlertDialog.Builder(PerfilVisualizado.this)
+                                            new AlertDialog.Builder(PerfilAluno.this)
                                                     .setTitle("Insignia Conquistada")
                                                     .setMessage(texto)
                                                     .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -339,7 +348,7 @@ public class PerfilVisualizado extends AppCompatActivity {
                                         @Override
                                         public void onClick(View v) {
 
-                                            new AlertDialog.Builder(PerfilVisualizado.this)
+                                            new AlertDialog.Builder(PerfilAluno.this)
                                                     .setTitle("Insignia Conquistada")
                                                     .setMessage(texto)
                                                     .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -366,7 +375,7 @@ public class PerfilVisualizado extends AppCompatActivity {
                                         @Override
                                         public void onClick(View v) {
 
-                                            new AlertDialog.Builder(PerfilVisualizado.this)
+                                            new AlertDialog.Builder(PerfilAluno.this)
                                                     .setTitle("Insignia Conquistada")
                                                     .setMessage("João ganhou a insignia devido sua primeira nota 10")
                                                     .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -393,7 +402,7 @@ public class PerfilVisualizado extends AppCompatActivity {
                                         @Override
                                         public void onClick(View v) {
 
-                                            new AlertDialog.Builder(PerfilVisualizado.this)
+                                            new AlertDialog.Builder(PerfilAluno.this)
                                                     .setTitle("Insignia Conquistada")
                                                     .setMessage(texto)
                                                     .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -420,7 +429,7 @@ public class PerfilVisualizado extends AppCompatActivity {
                                         @Override
                                         public void onClick(View v) {
 
-                                            new AlertDialog.Builder(PerfilVisualizado.this)
+                                            new AlertDialog.Builder(PerfilAluno.this)
                                                     .setTitle("Insignia Conquistada")
                                                     .setMessage(texto)
                                                     .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -462,9 +471,8 @@ public class PerfilVisualizado extends AppCompatActivity {
 
         };
 
-        RequestQueue requestQueue = Volley.newRequestQueue(PerfilVisualizado.this);
+        RequestQueue requestQueue = Volley.newRequestQueue(PerfilAluno.this);
         requestQueue.add(stringRequest);
     }
-
 
 }

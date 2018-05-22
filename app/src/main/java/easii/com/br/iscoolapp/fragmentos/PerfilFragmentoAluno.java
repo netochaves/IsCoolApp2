@@ -52,7 +52,7 @@ public class PerfilFragmentoAluno extends android.app.Fragment {
 
 
     private View view;
-    private TextView nometx,infotx;
+    private TextView perfil_name,perfil_ira,perfil_frequencia;
     public CircleImageView s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12;
     private String listaDeInsignias = null;
 
@@ -82,25 +82,12 @@ public class PerfilFragmentoAluno extends android.app.Fragment {
         s10 = (CircleImageView) view.findViewById(R.id.s10);
         s11 = (CircleImageView) view.findViewById(R.id.s11);
         s12 = (CircleImageView) view.findViewById(R.id.s12);
-        nometx = (TextView) view.findViewById(R.id.nomedoperfil);
-        infotx = (TextView) view.findViewById(R.id.info);
+        perfil_name = (TextView) view.findViewById(R.id.Perfil_name);
+        perfil_ira = (TextView) view.findViewById(R.id.perfil_ira);
+        perfil_frequencia = (TextView) view.findViewById(R.id.perfil_frequencia);
 
         setaInformacoes();
         procuraInsignea();
-//
-//        s1.setImageResource(R.mipmap.s1);
-//        s2.setImageResource(R.mipmap.s2);
-//        s3.setImageResource(R.mipmap.s3);
-//        s4.setImageResource(R.mipmap.s4);
-//        s5.setImageResource(R.mipmap.s5);
-//        s6.setImageResource(R.mipmap.s6);
-//        s7.setImageResource(R.mipmap.s7);
-//        s8.setImageResource(R.mipmap.s8);
-//        s9.setImageResource(R.mipmap.s9);
-//        s10.setImageResource(R.mipmap.s10);
-//        s11.setImageResource(R.mipmap.s11);
-//        s12.setImageResource(R.mipmap.s12);
-
 
         return view;
 
@@ -114,10 +101,22 @@ public class PerfilFragmentoAluno extends android.app.Fragment {
         Gson gson = new Gson();
         Aluno2 aluno2 = gson.fromJson(alunoJson, Aluno2.class);
 
-        nometx.setText(aluno2.getNome());
-        infotx.setText(aluno2.getSerie()+ "/"+aluno2.getTurno()+ "\n");
+        perfil_frequencia.setText("0");
+        perfil_ira.setText("0");
+        perfil_name.setText(primeiroNomeDoAluno(aluno2.getNome()));
     }
+    private String primeiroNomeDoAluno(String nomeCompleto) {
 
+
+        int idx = nomeCompleto.indexOf(" ");
+
+        if (idx == -1) {
+            return nomeCompleto;
+        } else {
+            return (nomeCompleto.substring(0, nomeCompleto.indexOf(" ")));
+        }
+
+    }
     private void procuraInsignea() {
 
         SharedPreferences sharedPref = view.getContext().getSharedPreferences("CONSTANTES", Context.MODE_PRIVATE);

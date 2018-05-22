@@ -62,7 +62,7 @@ public class LoginResponsavel extends AppCompatActivity {
                             editor.putString("LOGADO", "SIM");
                             editor.commit();
 
-                            Intent intent = new Intent(LoginResponsavel.this, MenuResponsavel.class);
+                            Intent intent = new Intent(LoginResponsavel.this, ResponsavelMenu.class);
                             startActivity(intent);
 
                         }else{

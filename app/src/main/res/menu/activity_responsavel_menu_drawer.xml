@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_filhos"
+            android:icon="@drawable/account_group"
+            android:title="Meus Filhos" />
+        <item
+            android:id="@+id/nav_notas"
+            android:icon="@drawable/clipboard_check"
+            android:title="Notas" />
+        <item
+            android:id="@+id/nav_frequencia"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Frequencia" />
+    </group>
+
+    <group
+            android:id="@+id/group_none"
+            android:checkableBehavior="none">
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/settings"
+                android:title="Configurações" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/logout"
+                android:title="Sair" />
+    </group>
+
+</menu>

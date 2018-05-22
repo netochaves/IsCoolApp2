@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, MenuProfessor.class);
                 startActivity(intent);
             }else{
-                Intent intent = new Intent(MainActivity.this, MenuResponsavel.class);
+                Intent intent = new Intent(MainActivity.this, ResponsavelMenu.class);
                 startActivity(intent);
             }
 
